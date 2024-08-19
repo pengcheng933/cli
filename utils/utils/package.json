@@ -1,0 +1,26 @@
+{
+  "name": "@imooc-cli-dev/utils",
+  "version": "0.0.0",
+  "description": "> TODO: description",
+  "author": "pengcheng <1900965366@qq.com>",
+  "homepage": "",
+  "license": "ISC",
+  "main": "lib/utils.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npmmirror.com"
+  },
+  "scripts": {
+    "test": "node ./__tests__/utils.test.js",
+    "test2": "echo \"run test2\""
+  },
+  "dependencies": {
+    "ejs": "^3.1.10"
+  }
+}

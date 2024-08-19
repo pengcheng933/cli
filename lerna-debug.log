@@ -1,0 +1,11 @@
+0 silly argv {
+0 silly argv   _: [ 'create' ],
+0 silly argv   lernaVersion: '8.1.7',
+0 silly argv   '$0': 'C:\\Users\\19009\\AppData\\Roaming\\npm\\node_modules\\lerna\\dist\\cli.js',
+0 silly argv   name: '@imooc-cli-dev/log'
+0 silly argv }
+1 notice cli v8.1.7
+2 verbose packageConfigs Explicit "packages" configuration found in lerna.json. Resolving packages using the configured glob(s): ["core/*","models/*","commands/*","utils/*"]
+3 verbose rootPath E:\npmCli\imooc-cli-dev
+4 warn ENOREMOTE No git remote found, skipping repository property
+5 error

@@ -1,0 +1,35 @@
+{
+  "name": "@imooc-cli-dev/init",
+  "version": "0.0.0",
+  "description": "> TODO: description",
+  "author": "pengcheng <1900965366@qq.com>",
+  "homepage": "",
+  "license": "ISC",
+  "main": "lib/index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.npmmirror.com"
+  },
+  "scripts": {
+    "test": "node ./__tests__/@imooc-cli-dev/init.test.js"
+  },
+  "dependencies": {
+    "@imooc-cli-dev/command": "file:../../models/command",
+    "@imooc-cli-dev/package": "file:../../models/package",
+    "@imooc-cli-dev/request": "file:../../utils/request",
+    "@imooc-cli-dev/utils": "file:../../utils/utils",
+    "@inquirer/prompts": "^5.3.8",
+    "dashify": "^2.0.0",
+    "ejs": "^3.1.10",
+    "fs-extra": "^11.2.0",
+    "glob": "^11.0.0",
+    "semver": "^7.6.3",
+    "user-home": "^3.0.0"
+  }
+}
