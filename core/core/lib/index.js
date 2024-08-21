@@ -21,9 +21,13 @@ async function core() {
 }
 
 async function prepare() {
+  // 检查运行环境是WIN还是MAC
   checkRoot();
+  // 检查用户根路径下是否存在
   checkUserHome();
+  // 检查用户根路径下的本CLI缓存资源路径是否存在，不存在创建用户根目录
   checkEnv();
+  // 检查本CLI是不是最新版本的
   await checkGlobalUpdate();
 }
 
@@ -81,7 +85,7 @@ function registerCommand() {
   program
     .command("init [projectName]")
     .option("-f,--force", "是否强制初始化")
-
+    // 初始化项目命令，主要逻辑在exec函数里
     .action(exec);
   // 开启debug模式
   program.on("option:debug", () => {
@@ -99,7 +103,7 @@ function registerCommand() {
   });
   // 对未知命令监听
   program.on("command:*", (obj) => {
-    console.log(colors.red(`位置命令${obj[0]}`));
+    console.log(colors.red(`未知命令${obj[0]}`));
   });
   program.parse(process.argv);
 }
