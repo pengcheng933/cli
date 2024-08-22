@@ -64,7 +64,7 @@ async function exec() {
     args[args.length - 1] = o;
 
     const code = `require('${rootFilePath}').call(null,${JSON.stringify(args)})`;
-    执行初始化命令
+    // 执行初始化命令，具体代码是commands下的init
     const child = cp.spawn("node", ["-e", code], {
       cwd: process.cwd(),
       stdio: "inherit",
