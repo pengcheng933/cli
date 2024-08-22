@@ -12,7 +12,9 @@ const SETTINGS = {
 const CACHE_DIR = "dependencies/";
 
 async function exec() {
+  // 也就是本地init初始化路径，需要传入--tp
   let targetPath = process.env.CLI_TARGET_PATH;
+  // 默认是 .imooc-cli
   const storePath = process.env.CLI_HOME;
   let storeDir = "";
   log.verbose("cli", targetPath);
@@ -22,6 +24,7 @@ async function exec() {
   const packageVersion = "latest";
   let pkg;
   if (!targetPath) {
+    // 没有指定本地的就去从NPM中下载
     targetPath = path.resolve(storePath, CACHE_DIR);
     storeDir = path.resolve(targetPath, "node_modules");
     pkg = new Package({
@@ -36,6 +39,7 @@ async function exec() {
       await pkg.install();
     }
   } else {
+    // 有就用本地的
     pkg = new Package({
       targetPath,
       packageName,
@@ -60,6 +64,7 @@ async function exec() {
     args[args.length - 1] = o;
 
     const code = `require('${rootFilePath}').call(null,${JSON.stringify(args)})`;
+    执行初始化命令
     const child = cp.spawn("node", ["-e", code], {
       cwd: process.cwd(),
       stdio: "inherit",
